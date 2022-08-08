@@ -1,0 +1,30 @@
+<div>
+  <form [formGroup]="form">
+    <div FormArrayName="lessons">
+      <div *ngFor="let lessonForm of formChild; let i = index">
+        <div [formGroup]="lessonForm">
+          <input type="text" formControlName="title" placeholder="title" />
+          <select formControlName="level">
+            <option>A</option>
+            <option>B</option>
+            <option>V</option>
+            <option>N</option>
+            <option>fs</option>
+            <option>sa</option>
+          </select>
+          <select formControlName="color_id">
+            <option [value]="1">ad</option>
+            <option [value]="2">fsd</option>
+            <option [value]="3">fgd</option>
+            <option [value]="4">hjg</option>
+            <option [value]="5">fs</option>
+            <option [value]="6">sa</option>
+          </select>
+        </div>
+        <button (click)="deleteItem(i)">Delete</button>
+      </div>
+    </div>
+  </form>
+  <button (click)="addNew()">Add</button>
+  <button (click)="save()">save</button>
+</div>
